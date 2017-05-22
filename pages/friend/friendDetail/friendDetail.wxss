@@ -1,0 +1,67 @@
+.friend-wrap {
+  width: 100%;
+  height: 300rpx;
+  background-color: #2c89f8;
+}
+
+.friend-thumb {
+  height: 200rpx;
+  width: 200rpx;
+  position: absolute;
+  top: 150rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  border: solid white 5rpx;
+}
+
+.friend-info-wrap {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.friend-name {
+  margin: 0 auto;
+  margin-top: 80rpx;
+}
+
+.btn-space {
+  flex: 1 1 1rpx;
+}
+
+.btn-clik {
+  flex: 10 1 1rpx;
+  margin: 0;
+  font-size: 30rpx;
+  padding-top: 1rpx;
+  padding-bottom: 1rpx;
+}
+
+.friend-prop-box {
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 38rpx;
+}
+
+.friend-prop-name {
+  flex: 1 1 1rpx;
+  color: gray;
+  font-size: 30rpx;
+}
+
+.friend-prop-value {
+  flex: 2.5 1 1rpx;
+  font-size: 32rpx;
+  width: 50rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 50rpx;
+}
+
+.friend-rm {
+  margin: 53rpx 38rpx;
+  color: #e0e0e0;
+  border-width: 3rpx;
+  border-color: #e0e0e0;
+  font-size: 30rpx;
+}

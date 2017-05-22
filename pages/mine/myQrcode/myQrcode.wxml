@@ -1,0 +1,7 @@
+<view class="qrcode-wrap">
+  <view class="user-name">{{user.realName}}<text class="user-credit">（信用等级：优秀）</text></view>
+  <view class="qrcode" >
+      <canvas class="qrcode-canvas" canvas-id="qrcode" />
+  </view>
+  <view class="tips">用融亿欠条小程序扫一扫二维码，加我为好友</view>
+</view>

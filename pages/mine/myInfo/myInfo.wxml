@@ -1,0 +1,53 @@
+<view class="weui-cells weui-cells_after-title" style="margin-top:40rpx">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">头像</view>
+        <image class="weui-cell__ft pic-header" src="{{user.userInfo.avatarUrl}}" background-size="cover"></image>
+    </view>
+
+    <view class="weui-cell">
+        <view class="weui-cell__bd">昵称</view>
+        <view class="weui-cell__ft">{{user.nickName}}</view>
+    </view>
+
+    <view class="weui-cell">
+        <view class="weui-cell__bd">账号</view>
+        <view class="weui-cell__ft">{{user.phoneNum}}</view>
+    </view>
+
+    <view class="weui-cell">
+        <view class="weui-cell__bd">真实姓名</view>
+        <view class="weui-cell__ft">{{user.realName==null?"未验证":user.realName}}</view>
+    </view>
+
+    <view class="weui-cell">
+        <view class="weui-cell__bd">信用等级</view>
+        <view class="weui-cell__ft">优秀</view>
+    </view>
+
+    <navigator url="../myQrcode/myQrcode" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">二维码名片</view>
+        <image class="weui-cell__ft pic-qrcode" src="../../../image/icon_qrcode.png"></image>
+    </navigator>
+
+    <!--<view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">我的银行卡</view>
+        <image class="weui-cell__ft pic-bank-card" src="../../../image/icon_bankcard.png"></image>
+    </view>-->
+</view>
+
+<view class="weui-cells weui-cells_after-title" style="margin-top:40rpx">
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="sexChangeTap">
+        <view class="weui-cell__bd">性别</view>
+        <view class="weui-cell__ft">{{user.sex==null?"未填写":user.sex}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="districtTap">
+        <view class="weui-cell__bd">地区</view>
+        <view class="weui-cell__ft" >{{user.district==null?"未填写":user.district}}</view>
+    </view>
+
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="editJobInfoTap">
+        <view class="weui-cell__bd">职业介绍</view>
+        <view class="weui-cell__ft remarks">{{user.remarks==null?"未填写":user.remarks}}</view>
+    </view>
+</view>

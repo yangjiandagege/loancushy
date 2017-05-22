@@ -1,0 +1,73 @@
+<view class="page__bd page__bd_spacing" style="margin-top:20rpx">
+  <view class="kind-list">
+    <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+      <view class="kind-list__item">
+        <view class="weui-flex kind-list__item-hd">
+          <view class="flx-row" id="{{item.id}}" style="flex:1" bindtap="kindToggle">
+            <view wx:if="{{item.open}}">
+              <image class="kind-arrow__img" src="/image/arrowdown.png"></image>
+            </view>
+            <view wx:else>
+              <image class="kind-arrow__img" src="/image/arrowright.png"></image>
+            </view>
+            <view class="weui-flex__item">{{item.name}}（{{item.length}}）</view>
+          </view>
+          <view id="{{item.id}}_add_frd" hidden="{{!item.isAdd}}" class="weui-flex" bindtap="addFriendTap">
+            <image class="kind-add-friend__img" hidden="{{!item.isAdd}}" src="/image/add_friend.png"></image>
+          </view>
+        </view>
+
+        <view class="kind-list__item-bd {{(item.open && item.id == 'benefit') ? 'kind-list__item-bd_show' : ''}}">
+          <view class="weui-cells {{(item.open && item.id == 'benefit') ? 'weui-cells_show' : ''}}">
+            <block wx:for-items="{{item.person}}" wx:for-item="person" wx:key="*item">
+              <view class="flx-row">
+                <navigator url="../friendDetail/friendDetail?phoneNum={{person.phoneNum}}" class="kind-person-info">
+                  <image class="kind-person-thumbnail" src="{{person.thumbnail}}"></image>
+                  <view class="flx-column" style="flex:1">
+                    <text class="kind-person-name">{{person.realName}}</text>
+                    <text class="kind-person-profinfo">{{person.remarks==null?'暂无职业信息':person.remarks}}</text>
+                  </view>
+                  <label style="font-size: 15px;color:{{person.isDefault == 1? '#338CF5':'#333'}}">
+                    {{person.isDefault == 1?'默认受益人':'设为默认受益人'}}
+                    <checkbox id="{{index}}" checked="{{person.isDefault == '1'}}" class="cb_default_benefit" catchtap="setDefaultBenefit" />
+                  </label>
+                </navigator>
+              </view>
+            </block>
+          </view>
+        </view>
+
+        <view class="kind-list__item-bd {{(item.open && item.id == 'friend') ? 'kind-list__item-bd_show' : ''}}">
+          <view class="weui-cells {{(item.open && item.id == 'friend') ? 'weui-cells_show' : ''}}">
+            <block wx:for-items="{{item.person}}" wx:for-item="person" wx:key="*item">
+              <navigator url="../friendDetail/friendDetail?phoneNum={{person.phoneNum}}" class="kind-person-info">
+                <image class="kind-person-thumbnail" src="{{person.thumbnail}}"></image>
+                <view class="flx-column" style="margin: auto 0;">
+                  <text class="kind-person-name">{{person.realName}}</text>
+                  <text class="kind-person-profinfo">{{person.remarks==null?'暂无职业信息':person.remarks}}</text>
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+
+        <view class="kind-list__item-bd {{(item.open && (item.id === 'channel' || item.id === 'customer')) ? 'kind-list__item-bd_show' : ''}}">
+          <view class="weui-cells {{(item.open && (item.id === 'channel' || item.id === 'customer')) ? 'weui-cells_show' : ''}}">
+            <block wx:for-items="{{item.person}}" wx:for-item="person" wx:key="*item">
+              <navigator url="../friendBizDetail/friendBizDetail?phoneNum={{person.phoneNum}}" class="kind-person-info">
+                <image class="kind-person-thumbnail" src="{{person.thumbnail}}"></image>
+                <view class="flx-column" style="margin: auto 0; flex:1; padding-right:40rpx">
+                  <view class="flx-row">
+                    <text class="kind-person-name" style="flex:1">{{person.realName}}</text>
+                    <text class="kind-person-profinfo">欠条单数：{{person.iouCount}}</text>
+                  </view>
+                  <text class="kind-person-profinfo">交易总额：{{person.payCount}}</text>
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

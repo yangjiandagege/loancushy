@@ -1,0 +1,9 @@
+
+<view class="message-wrapper">
+  <text class="message-title">
+    点击气泡打开客服消息界面
+  </text>
+  <view class="message-line">
+    <contact-button size="40" session-from="weapp"></contact-button>
+  </view>
+</view>

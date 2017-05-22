@@ -1,0 +1,8 @@
+<view class="body">
+
+  <view class="flx-column" style="margin: 0 auto;margin-top:380rpx;">
+    <navigator class="select-box" url="/pages/iou/myAllIouList/myAllIouList?role=r02">我是受益人</navigator>
+    <navigator class="select-box" url="/pages/iou/myAllIouList/myAllIouList?role=r03">我是欠款人</navigator>
+  </view>
+
+</view>

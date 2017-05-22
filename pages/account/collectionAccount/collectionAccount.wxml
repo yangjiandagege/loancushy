@@ -1,0 +1,10 @@
+<view class="margin-wrap">
+  <view class="margin-box-1">
+    <view class="margin-title">账户余额(元）</view>
+    <view class="margin-value">2500.00</view>
+  </view>
+</view>
+
+<view class="flx-row" style="margin-top:60rpx;">
+  <button class="btn-clik" style="background-color:#2c89f8" type="primary">提现</button>
+</view>

@@ -1,0 +1,32 @@
+<view class="flx-column" style="width:100%;margin-top:20rpx;">
+    <view class="weui-cells weui-cells_after-title input-box">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">当前密码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入当前密码" type="number" password="true" maxlength="6" bindinput="oldPwdInput"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">设置新密码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入6位数字新密码" type="number" password="true" maxlength="6" bindinput="newPwdInput"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">确认新密码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请再次输入新密码" type="number" password="true" maxlength="6" bindinput="newPwdAgainInput"/>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-btn-area" style="margin-top:80rpx;">
+        <button class="weui-btn" style="background-color:#2c89f8;" type="primary" bindtap="modifyPwdConfirmTap">确认</button>
+    </view>
+</view>

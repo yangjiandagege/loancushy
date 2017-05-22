@@ -1,0 +1,61 @@
+<view class="weui-cells__title">商品信息</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">商品名称</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入商品名称" bindinput="goodsNameInput"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">商品规格</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入商品规格信息" bindinput="goodsSpecInput"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">单位</view>
+        </view>
+        <view class="weui-cell__bd">
+            <text class="weui-input">kg</text>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">数量</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入商品数量" type="digit" bindinput="goodsNumInput"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">单价</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入单价" type="digit" bindinput="goodsPriceInput"/>
+        </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">总价</view>
+        </view>
+        <view class="weui-cell__bd">
+            <text class="weui-input">{{total}} 元</text>
+        </view>
+    </view>
+
+</view>
+
+<button class="weui-btn" style="margin-top:64rpx;margin-left:32rpx;margin-right:32rpx;background-color:#2c89f8;color:#fff" bindtap="confirmBtnTap">
+确认
+</button>

@@ -1,0 +1,38 @@
+<import src="/style/acce-widget/iou-item/iou-item.wxml" />
+<import src="/style/acce-widget/loadmore/loadmore.wxml" />
+<view class="weui-tab">
+    <view class="weui-navbar">
+        <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title" style="{{activeIndex == index ? 'color:#2c89f8' : ''}}">{{item}}</view>
+            </view>
+        </block>
+        <view class="weui-navbar__slider" style="width:{{750/tabs.length}}rpx;background-color:#2c89f8;transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+    <view class="weui-tab__panel">
+        <!--垂直滚动，这里必须设置高度-->
+        <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" 
+            bindscrolltolower="bindDownLoad" bindscroll="scroll" hidden="{{activeIndex != 0}}">
+            <view wx:for="{{noRepayIouList}}">
+              <navigator url="../iouDetail/iouDetail?iouId={{item.debtId}}">
+                <template is="iou-item" data="{{receiptorName: item.receiptorName,debtCycle: item.debtCycle,debtAmount:item.debtAmount, assurePercent:item.assurePercent, assureAmount:item.assureAmount,debtorName:item.debtorName, agreePayDate:item.agreePayDate,effectiveDate:item.effectiveDate,debtState:item.debtState,overdueAssureDate:item.overdueAssureDate}}" />
+              </navigator>
+            </view>
+            <template is="zan-loadmore" data="{{loading: true}}" wx:if="{{loadStatus==0}}"/>
+            <template is="zan-loadmore" data="{{nomore: true}}" wx:elif="{{loadStatus==1}}"/>
+            <template is="zan-loadmore" data="{{nodata: true}}" wx:else/>
+        </scroll-view>
+
+        <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" 
+            bindscrolltolower="bindDownLoad" bindscroll="scroll" hidden="{{activeIndex != 1}}">
+            <view wx:for="{{iouList}}">
+              <navigator url="../iouDetail/iouDetail?iouId={{item.debtId}}">
+                <template is="iou-item" data="{{receiptorName: item.receiptorName,debtCycle: item.debtCycle,debtAmount:item.debtAmount, assurePercent:item.assurePercent, assureAmount:item.assureAmount,debtorName:item.debtorName, agreePayDate:item.agreePayDate,effectiveDate:item.effectiveDate,debtState:item.debtState,overdueAssureDate:item.overdueAssureDate}}" />
+              </navigator>
+            </view>
+            <template is="zan-loadmore" data="{{loading: true}}" wx:if="{{loadStatus==0}}"/>
+            <template is="zan-loadmore" data="{{nomore: true}}" wx:elif="{{loadStatus==1}}"/>
+            <template is="zan-loadmore" data="{{nodata: true}}" wx:else/>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+<import src="/style/acce-widget/bankcard-item/bankcard-item.wxml" />
+<view wx:for="{{bankCardList}}">
+    <navigator url="">
+        <template is="bankcard-item" data="{{bankName:item.bankName, cardType:item.cardType, cardNum:item.cardNum, cardColor:item.cardColor}}" />
+    </navigator>
+</view>
+
+<view class="add-bankcard" bindtap="addBankcardTap">添加银行卡</view>

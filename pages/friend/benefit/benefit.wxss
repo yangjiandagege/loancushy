@@ -1,0 +1,31 @@
+
+.view_list {
+  height: auto;
+  background: #fff;
+}
+.kind-person-info{
+  height: 50px;
+  display: flex;
+  width: 100%;
+  align-items:center;
+  padding: 20rpx;
+  flex-direction: row;
+  border-bottom: solid 1px;
+  border-bottom-color: #f0f0f0;
+}
+.kind-person-thumbnail{
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.kind-person-profinfo {
+  font-size: 15px;
+  color: #808080;
+  width: 250rpx;
+  height: 50rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,14 @@
+
+
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <textarea class="weui-textarea" placeholder="请输入您的职业信息" style="height: 3.3em" bindinput="jobInfoInput"/>
+            <view class="weui-textarea-counter">0/200</view>
+        </view>
+    </view>
+</view>
+
+<view class="weui-btn-area" style="margin-top:80rpx;">
+    <button class="weui-btn" style="background-color:#2c89f8;" type="primary" bindtap="saveTap">保存</button>
+</view>

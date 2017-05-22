@@ -1,0 +1,27 @@
+<view class="margin-wrap">
+  <view class="margin-box-1">
+    <view class="margin-title">保证金余额(元）</view>
+    <view class="margin-value">25000.00</view>
+  </view>
+
+  <view class="flx-row" style="margin-top:20rpx;">
+    <view class="margin-box-2">
+      <view class="margin-title">保证金总额</view>
+      <view class="margin-value" style="font-size:48rpx;">30000.00</view>
+    </view>
+    <view style="width:220rpx;"></view>
+    <view class="margin-box-2">
+      <view class="margin-title">已使用额度</view>
+      <view class="margin-value" style="font-size:48rpx;">5000.00</view>
+    </view>
+  </view>
+
+</view>
+
+<view class="flx-row" style="margin-top:60rpx;">
+  <view class="btn-space"></view>
+  <button class="btn-clik" style="background-color:#2c89f8" type="primary" >充值</button>
+  <view class="btn-space"></view>
+  <button class="btn-clik" style="color:#2c89f8;border-width:3rpx;border-color: #2c89f8" type="default" plain="true">提现</button>
+  <view class="btn-space"></view>
+</view>

@@ -1,0 +1,18 @@
+
+<view class="flx-column">
+  
+  <view class="pay-tips-0" wx:if="{{assurePercent!='0'}}">将冻结{{assurePercent*100}}%的保证金：</view>
+  <view class="pay-tips-1" wx:if="{{assurePercent!='0'}}">¥{{debtAmount*assurePercent}}</view>
+  <view class="pay-tips-2" style="{{assurePercent=='0'?'margin-top:60rpx':''}}">请输入融亿账户密码，以验证身份</view>
+  <view class="pwd-input-box">
+    <input class="pwd-input-box-hidden"  cursor-spacing="100px" focus="true" maxlength="6" type="number" bindblur="inputBlur" bindfocus="inputFocus" bindinput="payPwdInput"/>
+    <view class="pwd-input-box">
+      <view class="pwd-input-item" style="border-left: solid 1rpx #b0b0b0;">{{inputLenght>=1?'*':''}}</view>
+      <view class="pwd-input-item">{{inputLenght>=2?'*':''}}</view>
+      <view class="pwd-input-item">{{inputLenght>=3?'*':''}}</view>
+      <view class="pwd-input-item">{{inputLenght>=4?'*':''}}</view>
+      <view class="pwd-input-item">{{inputLenght>=5?'*':''}}</view>
+      <view class="pwd-input-item" style="border-right: solid 1rpx #b0b0b0;">{{inputLenght>=6?'*':''}}</view>
+    </view>
+  </view>
+</view>

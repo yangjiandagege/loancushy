@@ -1,0 +1,87 @@
+@import "/style/acce-widget/iou-item-wrap/iou-item-wrap.wxss";
+
+.base-info-box {
+  display:flex;
+  height: 160rpx;
+  margin-top: 50rpx;
+  margin-left: 38rpx;
+  margin-right: 38rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+
+.base-info-box .image-icon {
+  margin: auto 0;
+  margin-left: 38rpx;
+  margin-right: 38rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 90%;
+}
+
+.base-info {
+  display:flex; 
+  flex-direction:column;
+  margin: auto 0;
+}
+
+.base-info-box .mine-text{
+  width: 100%;
+  font-size: 16px;
+}
+
+.in-right{
+  position: relative;
+  right: 1rpx;
+}
+
+.qrcode {
+    height: 240rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.qrcode > canvas {
+    width: 240rpx;
+    height: 240rpx;
+}
+
+.send-to-friend-txt{
+    margin: 0 auto;
+    font-size: 15px;
+    color: #00a3b8;
+}
+
+.drawer{
+  margin-top:20rpx;
+  position: absolute;
+  right: 32rpx;
+  font-size: 14px;
+}
+
+.item-status{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  margin-top: 20rpx;
+  font-size:25rpx;
+}
+
+.item-status-trg{
+  width:0;
+  height:0;
+  border-width:25rpx 15rpx 25rpx 0;
+  border-style:solid;
+  border-color:transparent #FFCC00 transparent transparent;/*透明 灰 透明 透明 */
+}
+
+.item-status-content{
+ padding: 5rpx 20rpx;
+ text-align:right;
+ background: #FFCC00;
+ color: white;
+ box-shadow: 2rpx 2rpx 2rpx #888888;
+}

@@ -1,0 +1,17 @@
+<view class="view_list">
+  <view wx:for-items="{{list}}" wx:key="*this">
+    <view class="flx-row">
+      <view id="{{index}}" bindtap="clickBenefit" class="kind-person-info">
+        <image class="kind-person-thumbnail" src="{{item.thumbnail}}"></image>
+        <view class="flx-column" style="margin: auto 0; flex:1">
+          <text class="kind-person-name">{{item.realName}}</text>
+          <text class="kind-person-profinfo">{{item.remarks==null?'暂无职业信息':item.remarks}}</text>
+        </view>
+        <label style="font-size: 15px;color:{{item.isDefault == 1? '#338CF5':'#333'}}">
+          {{item.isDefault == 1?'默认受益人':'设为默认受益人'}}
+          <checkbox id="{{index}}" checked="{{item.isDefault == '1'}}" class="cb_default_benefit" catchtap="setDefaultBenefit" />
+        </label>
+      </view>
+    </view>
+  </view>
+</view>

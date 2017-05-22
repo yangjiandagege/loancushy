@@ -1,0 +1,16 @@
+.message-wrapper{
+  margin: 100rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-title{
+  margin: 0 auto;
+  font-size: 28rpx;
+  color:gray;
+}
+
+.message-line{
+  margin: 0 auto;
+  margin-top: 50rpx;
+}

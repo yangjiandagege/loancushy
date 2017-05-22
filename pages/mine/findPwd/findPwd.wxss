@@ -1,0 +1,65 @@
+.page{
+  display: flex;
+}
+
+.step-box{
+  display: flex;
+  flex-direction: row;
+}
+
+.step-item{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+  font-size: 20rpx;
+  background-color: #e0e0e0;
+  color: #333333;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.step-item-selected{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+  font-size: 20rpx;
+  background-color: #2c89f8;
+  color: white;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.step-explain{
+  width: 200rpx;
+  font-size: 23rpx;
+  color: gray;
+  text-align: center;
+}
+
+.step-line{
+    margin: auto 0;
+    width: 200rpx;
+    height: 5rpx;
+    background-color: #e0e0e0;
+}
+
+.step-line-selected{
+    margin: auto 0;
+    width: 200rpx;
+    height: 5rpx;
+    background-color: #2c89f8;
+}
+
+.step-space{
+    margin: auto 0;
+    width: 120rpx;
+    height: 5rpx;
+}
+
+.input-box{
+  margin-left:25rpx;
+  margin-right:25rpx;
+  border-left: solid #e0e0e0 1rpx;
+  border-right: solid #e0e0e0 1rpx;
+  border-radius: 10rpx;
+}

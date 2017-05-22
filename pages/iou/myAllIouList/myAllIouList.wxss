@@ -1,0 +1,10 @@
+@import "/style/acce-widget/iou-item/iou-item.wxss";
+@import "/style/acce-widget/loadmore/loadmore.wxss";
+scroll-view {
+ width: 100%;
+}
+
+.lable-load-more {
+    margin: auto 0 ;
+    text-align: center;
+}

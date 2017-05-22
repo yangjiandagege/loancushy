@@ -1,0 +1,8 @@
+@import "/style/acce-widget/bankcard-item/bankcard-item.wxss";
+.add-bankcard{
+  width: 100%;
+  margin-top: 60rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color:#2c89f8;
+}

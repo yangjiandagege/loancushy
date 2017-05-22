@@ -1,0 +1,10 @@
+
+<view class="input-register" style="margin-top:200rpx">
+  <input placeholder="请输入手机号码" type="number" maxlength="11" bindinput="phoneNumInput"/>
+</view>
+
+<view class="input-register" style="flex-direction:row">
+  <input class="input-sms" placeholder="请输入验证码" type="number" maxlength="4" bindinput="smsCodeInput"/>
+  <button name="login" class="button-sms-code" bindtap="getSmsCodeButtonTap" disabled="{{disableGetSms}}">{{smsPrompt}}</button>
+</view>
+<button class="button-register" bindtap="registerButtonTap" loading="{{loading}}">注册</button>

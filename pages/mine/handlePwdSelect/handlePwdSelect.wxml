@@ -1,0 +1,8 @@
+<view class="body">
+
+  <view class="flx-column" style="margin: 0 auto;margin-top:380rpx;">
+    <navigator class="select-box" url="/pages/mine/modifyPwd/modifyPwd">修改融亿账户密码</navigator>
+    <navigator class="select-box" url="/pages/mine/findPwd/findPwd">找回融亿账户密码</navigator>
+  </view>
+
+</view>

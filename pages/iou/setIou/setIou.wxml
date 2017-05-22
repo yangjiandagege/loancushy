@@ -1,0 +1,103 @@
+<view bindtap="selectBenepit" class="weui-select weui-select_in-select-after favoree-wrap">
+  <view class="flx-column" style="width:100%;">
+    <view class="flx-row">
+      <view class="favoree-name">受益人：{{iouInfo.receiptorName}}</view>
+      <view class="favoree-phone">{{iouInfo.receiptorPhoneNum}}</view>
+    </view>
+    <view class="favoree-bandcard">收款银行账户：**** **** **** 5500</view>    
+  </view>
+
+</view>
+
+<form bindsubmit="submitTap" report-submit="true">
+  <view class="weui-cells weui-cells_after-title" style="margin-top: 20rpx;">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">欠条金额</view>
+          </view>
+          <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="请输入欠条金额" type="digit" bindinput="valueInput"/>
+          </view>
+          <text>元</text>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">还款期限</view>
+          </view>
+          <view class="weui-cell__bd">
+              <text class="weui-input {{debtCycleIndex==0?'selected-box':'unselected-box'}}" bindtap="tenDaysTap">10天</text>
+              <text class="weui-input {{debtCycleIndex==1?'selected-box':'unselected-box'}}" bindtap="oneMonthTap">1个月</text>
+              <text class="weui-input {{debtCycleIndex==2?'selected-box':'unselected-box'}}" bindtap="towMonthTap">2个月</text>
+              <text class="weui-input {{debtCycleIndex==3?'selected-box':'unselected-box'}}" bindtap="threeMonthTap">3个月</text>
+          </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">手续费</view>
+          </view>
+          <view class="weui-cell__bd">
+              <view class="weui-input">{{iouInfo.procedureFee}}元</view>
+          </view>
+      </view>
+
+      <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">保证金</view>
+          </view>
+          <view class="weui-cell__bd">
+              <picker bindchange="bindAssurePercentChange" value="{{assurePercentIndex}}" range="{{assurePercentTitles}}">
+                  <view class="weui-select weui-select_in-select-after">{{assurePercentTitles[assurePercentIndex]}}</view>
+              </picker>
+          </view>
+      </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title" style="margin-top:20rpx">
+
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">约定还款日</view>
+          </view>
+          <view class="weui-cell__bd">
+              <view class="weui-input">{{iouInfo.agreePayDate}}</view>
+          </view>
+      </view>
+
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+              <view class="weui-label">担保结束日</view>
+          </view>
+          <view class="weui-cell__bd">
+              <view class="weui-input">{{iouInfo.overdueAssureDate}}</view>
+          </view>
+      </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title" style="margin-top:20rpx">
+      <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+              <view class="weui-label">商品信息</view>
+          </view>
+          <view class="weui-cell__bd" bindtap="editGoodsTap">
+              <view class="weui-select weui-select_in-select-after">{{iouInfo.remarks}}</view>
+          </view>
+      </view>
+  </view>
+
+  <checkbox-group bindchange="bindAgreeChange">
+      <label class="weui-agree" for="weuiAgree">
+          <view class="weui-agree__text">
+              <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+              <view class="weui-agree__checkbox-icon">
+                  <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+              </view>
+              阅读并同意<navigator url="/pages/mine/contract/contract" class="weui-agree__link">《欠条服务协议(v1.3)》</navigator>
+          </view>
+      </label>
+  </checkbox-group>
+
+
+  <button class="weui-btn" style="margin:32rpx;{{isAgree?'background-color:#2c89f8':'background-color:#4cA9f8'}}" type="primary" loading="{{loading}}"  formType="submit" disabled="{{!isAgree}}">确定</button>
+</form>

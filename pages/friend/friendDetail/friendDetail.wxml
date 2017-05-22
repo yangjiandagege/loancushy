@@ -1,0 +1,59 @@
+<view class="friend-wrap" >
+</view>
+<image class="friend-thumb" src="{{frdUserInfo.thumbnail}}" background-size="cover"></image>
+<view class="friend-info-wrap">
+    <view class="friend-name">{{frdUserInfo.nickName}}</view>
+    <view class="flx-row" style="margin-top:15rpx;margin-bottom:42rpx;" wx:if="{{!isForAddFriend}}">
+        <view class="btn-space"></view>
+        <button class="btn-clik" style="background-color:#2c89f8" type="primary" bindtap="sendIouTap">发欠条</button>
+        <view class="btn-space"></view>
+        <button class="btn-clik" style="color:#2c89f8;border-width:3rpx;border-color: #2c89f8" type="default" plain="true">交易记录</button>
+        <view class="btn-space"></view>
+    </view>
+    <view class="friend-prop-box">
+        <view class="friend-prop-name">融亿账号</view>
+        <view class="friend-prop-value">{{frdUserInfo.phoneNum}}</view>
+    </view>
+
+    <!--<view class="friend-prop-box">
+        <view class="friend-prop-name">信用等级</view>
+        <view class="friend-prop-value">良好</view>
+    </view>-->
+
+    <view class="friend-prop-box">
+        <view class="friend-prop-name">真实姓名</view>
+        <view class="friend-prop-value">{{frdUserInfo.realName}}</view>
+    </view>
+
+    <view class="friend-prop-box">
+        <text class="friend-prop-name">性别</text>
+        <text class="friend-prop-value">{{frdUserInfo.sex}}</text>
+    </view>
+
+    <!--<view class="friend-prop-box">
+        <text class="friend-prop-name">年龄</text>
+        <text class="friend-prop-value">24岁</text>
+    </view>-->
+
+    <view class="friend-prop-box">
+        <text class="friend-prop-name">地区</text>
+        <text class="friend-prop-value">{{frdUserInfo.district}}</text>
+    </view>
+
+    <!--<view class="friend-prop-box">
+        <text class="friend-prop-name">分组</text>
+        <text class="friend-prop-value">受益人</text>
+    </view>-->
+
+    <view class="friend-prop-box" style="margin-bottom:42rpx;">
+        <text class="friend-prop-name">职业介绍</text>
+        <text class="friend-prop-value">{{frdUserInfo.remarks}}</text>
+    </view>
+</view>
+
+<view wx:if="{{isForAddFriend}}">
+  <button class="friend-rm" type="default" plain="true" bindtap="addFrdTap">添加该好友</button>
+</view>
+<view wx:else>
+  <button class="friend-rm" type="default" plain="true" bindtap="deleteFrdTap">删除该好友</button>
+</view>

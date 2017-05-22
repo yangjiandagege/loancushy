@@ -1,0 +1,33 @@
+
+<view class="page__bd page__bd_spacing" style="margin-top:20rpx">
+    <view class="kind-list">
+        <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+            <view class="kind-list__item">
+                <view class="weui-flex kind-list__item-hd">
+                    <view class="flx-row" id="{{item.id}}" bindtap="kindToggle">
+                      <view wx:if="{{item.open}}">
+                          <image class="kind-arrow__img" src="/image/arrowdown.png" ></image>
+                      </view>
+                      <view wx:else>
+                          <image class="kind-arrow__img" src="/image/arrowright.png"></image>
+                      </view>
+                      <view class="weui-flex__item">{{item.name}}</view>
+                    </view>
+                </view>
+                <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+                    <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                        <block wx:for-items="{{item.person}}" wx:for-item="person" wx:key="*item">
+                            <view id="{{person.userId}}" bindtap="friendSelectTap" class="kind-person-info">
+                                <image class="kind-person-thumbnail" src="{{person.thumbnail}}"></image>
+                                <view class="flx-column" style="margin: auto 0;">
+                                    <text class="kind-person-name">{{person.realName}}</text>
+                                    <text class="kind-person-profinfo">{{person.professionInfo==null?'暂无职业信息':person.professionInfo}}</text>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

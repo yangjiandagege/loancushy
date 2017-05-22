@@ -1,0 +1,6 @@
+<import src="/style/acce-widget/iou-item/iou-item.wxml" />
+<view wx:for="{{iouList}}">
+  <navigator url="../iouDetail/iouDetail?iouId={{item.debtId}}">
+    <template is="iou-item" data="{{receiptorName: item.receiptorName,debtCycle: item.debtCycle,debtAmount:item.debtAmount, assurePercent:item.assurePercent,assureAmount:item.assureAmount,debtorName:item.debtorName, agreePayDate:item.agreePayDate,effectiveDate:item.effectiveDate,debtState:item.debtState,overdueAssureDate:item.overdueAssureDate}}" />
+  </navigator>
+</view>

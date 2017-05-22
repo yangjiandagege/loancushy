@@ -1,0 +1,16 @@
+.pic-header{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.pic-qrcode , .pic-bank-card{
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.remarks{
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

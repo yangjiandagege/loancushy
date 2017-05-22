@@ -1,0 +1,55 @@
+<import src="/style/acce-widget/iou-item-wrap/iou-item-wrap.wxml" />
+
+<view style="position: absolute;width:100%;height:100%;">
+  <view style="height:30%;background-color:white;height:23%;">
+    <template is="iou-item-wrap" data="{{receiptorName: iouInfo.receiptorName,debtCycle: iouInfo.debtCycle,debtAmount:iouInfo.debtAmount, assurePercent:iouInfo.assurePercent,assureAmount:iouInfo.assureAmount,debtorName:iouInfo.debtorName, agreePayDate:iouInfo.agreePayDate,effectiveDate:iouInfo.effectiveDate,debtState:iouInfo.debtState,overdueAssureDate:iouInfo.overdueAssureDate}}" />
+  </view>
+    <view style="height:1%;background-color:#f1f1f1"></view>
+  <view class="weui-form-preview" style="height:68%;">
+      <view class="weui-form-preview__bd">
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">欠条期限</view>
+              <view class="weui-form-preview__value">{{iouInfo.debtCycle}}天</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">手续费</view>
+              <view class="weui-form-preview__value">{{iouInfo.procedureFee}}元</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">商品信息</view>
+              <view class="weui-form-preview__value">{{iouInfo.remarks}}</view>
+          </view>
+                  <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">质押情况</view>
+              <view class="weui-form-preview__value">无质押</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">制单人</view>
+              <view class="weui-form-preview__value">{{iouInfo.createUserName}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">制单时间</view>
+              <view class="weui-form-preview__value">{{iouInfo.createTime}}</view>
+          </view>
+          <view class="weui-form-preview__item">
+              <view class="weui-form-preview__label">服务协议</view>
+              <view class="weui-form-preview__value">v1.5.6</view>
+          </view>
+          <view class="qrcode" >
+              <canvas canvas-id="qrcode" />
+          </view>
+      </view>
+  </view>
+
+  <view class="weui-form-preview__ft" style="height:8%;background-color:white;" wx:if="{{iouInfo.debtState=='0'&&isFromOth}}">
+      <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="rejectIouTap">拒绝</view>
+      <view class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="confirmIouTap">确认欠条</view>
+  </view>
+
+  <view class="weui-form-preview__ft" style="height:8%;background-color:white;" wx:elif="{{iouInfo.debtState=='0'}}">
+      <view class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active" bindtap="rejectIouTap">作废</view>
+      <button class="weui-form-preview__btn weui-form-preview__btn_primary" style="background-color:white;" hover-class="weui-form-preview__btn_active" open-type="share" bindtap="sendIouTap">转发</button>
+  </view>
+  <view style="height:8%;background-color:white;" wx:else>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+/* marginAccount.wxss */
+.margin-wrap{
+  height: 380rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #2c89f8;
+  padding: 32rpx;
+}
+
+.margin-box-1{
+  border-bottom: dashed 1rpx white;
+}
+
+.margin-title{
+  margin-top: 20rpx;
+  color: white;
+  font-size: 32rpx;
+}
+
+.margin-value{
+  margin-bottom: 20rpx;
+  color: white;
+  font-size: 68rpx;
+}
+
+.btn-space {
+    flex: 1 1 1rpx;
+}
+
+.btn-clik {
+    flex: 10 1 1rpx;
+    margin:0;
+    font-size:30rpx;
+    padding-top:1rpx;
+    padding-bottom: 1rpx;
+}

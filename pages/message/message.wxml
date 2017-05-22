@@ -1,0 +1,22 @@
+
+<!--pages/message/message.wxml-->
+<block wx:if="{{showLoading}}">
+  <view class="page-loading">
+    <text class="weui-loading" />
+    <text class="loading-text">玩命加载中</text>
+  </view>
+</block>
+<block wx:else>
+  <view class="message_list">
+    <navigator url="../iou/iouDetail/iouDetail?iouId={{item.bizId}}" class="message_item" wx:for-items="{{list}}" wx:key="{{item.id}}">
+      <view class="view_title">
+        <!--<block wx:if="{{item.msgType}} == debt">-->
+          <text class="text_title">{{item.msgType}}</text>
+        <!--</block>-->
+        <text class="text_time">{{item.createTime}}</text>
+      </view>
+      <text class="text_content">{{item.msgContent}}</text>
+      <text class="text_detail">查看详情</text>
+    </navigator>
+  </view>
+</block>

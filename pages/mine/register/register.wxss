@@ -1,0 +1,43 @@
+textarea {
+    padding: 20rpx 0;
+}
+.input-register {
+    display:flex;
+    height: 65rpx;
+    margin-right: 100rpx;
+    margin-left: 100rpx;
+    margin-bottom: 70rpx;
+    border:solid 1px;
+    border-width: 0px 0px 1px 0px;
+    font-size: 19px;
+}
+.button-register {
+    margin-right: 100rpx;
+    margin-left: 100rpx;
+    margin-top: 120rpx;
+    color: #fff;
+    background-color: #2c89f8;
+}
+.button-sms-code {
+    height: 65rpx;
+    font-size: 12px;
+    background-color: #2c89f8;
+    color: #fff;
+    position: absolute;
+    right: 105rpx;
+}
+.text-click {
+    margin-top: 50rpx;
+    font-size: 14px;
+}
+.text-register {
+    position: absolute;
+    left: 105rpx;
+}
+.text-forget-pwd {
+    position: absolute;
+    right: 105rpx;
+}
+.input-sms {
+    margin-right: 200rpx;
+}
